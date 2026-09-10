@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileToggle) mobileToggle.addEventListener('click', () => toggle(true));
   if (closeBtn) closeBtn.addEventListener('click', () => toggle(false));
   if (backdrop) backdrop.addEventListener('click', () => toggle(false));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') toggle(false); });
   document.querySelectorAll('.mobile-drawer a').forEach(l => l.addEventListener('click', () => toggle(false)));
   document.querySelectorAll('.faq-item').forEach(item => {
     const q = item.querySelector('.faq-question');
